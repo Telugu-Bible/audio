@@ -6,6 +6,10 @@ import io
 app = Flask(__name__)
 CORS(app)  # Enables CORS for all routes
 
+@app.route('/',methods=['GET'])
+def welcome():
+    return "<h1>Welcome to Telugu Bible audio<h1>"
+
 @app.route("/text-to-speech/", methods=["POST"])
 def text_to_speech():
     text = request.form.get("text")
